@@ -152,7 +152,7 @@ a.link, .link {
 }
 
 /* ---------- Question blocks ---------- */
-.question { margin-bottom: 20px; max-width: 360px; }
+.question { margin-bottom: 20px; }
 
 /* ---------- Option groups (Yes/No + segmented) ---------- */
 .option-group { display: flex; }
