@@ -7,9 +7,9 @@ usability testing. No backend, build step, or internet is required.
 
 To open the prototype in your default browser
 
-1. Download the files in this project
-2. Unzip the download if necessary (for example, if you downloaded the files from Google
-   Drive).
+1. Download the latest copy of prototype:
+   **[pa_proto.zip](https://github.com/New-Practice-Lab/pa_proto/releases/latest/download/pa_proto.zip)**.
+2. Unzip the download.
 3. Navigate to the `pa_proto` folder and open `index.html`.
 
 Everything runs locally from this folder; nothing is read or written outside it.
