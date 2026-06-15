@@ -13,7 +13,6 @@
   --field-bg: #f2f2f2;
   --border: #cccccc;
   --border-light: #e3e3e3;
-  --selected-bg: #dce9f7;   /* light blue, selected Yes/No */
   --required: #d12f2f;      /* red asterisk */
   --footer-strip: #3f3f3f;
   --page-bg: #ffffff;
@@ -189,11 +188,9 @@ a.link, .link {
   color: var(--text);
 }
 .option-group.yesno .option + .option { border-left: none; }
+/* selected Yes/No: a thick navy line along the bottom of the box (per screen 4) */
 .option-group.yesno .option.selected {
-  background: var(--selected-bg);
-  border-color: var(--navy);
-  color: var(--navy);
-  font-weight: 700;
+  box-shadow: inset 0 -3px 0 var(--navy);
 }
 
 /* ---------- Cards (screen 3) ---------- */
