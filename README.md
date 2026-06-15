@@ -1,23 +1,28 @@
 # myPATH Usability-Test Prototype
 
-A small, static prototype that mimics 5 myPATH screens for moderated (Zoom) usability
-testing. No backend, no build step, no internet required.
+A small, static prototype that mimics 5 myPATH screens for moderated (Zoom)
+usability testing. No backend, build step, or internet is required.
 
 ## How to run (moderators)
 
-Just **double-click `index.html`** — it opens in your default browser and the
-Next/Previous buttons move between screens.
+To open the prototype in your default browser
 
-That's it. Everything runs locally from this folder; nothing is read or written
-outside it.
+1. Download the files in this project
+2. Unzip the download if necessary (for example, if you downloaded the files from Google
+   Drive).
+3. Navigate to the `pa_proto` folder and open `index.html`.
+
+Everything runs locally from this folder; nothing is read or written outside it.
 
 > If your browser blocks something when opened directly, you can instead serve the
-> folder locally:
+> folder locally.
+>
+> **Prerequisite**: [`uv` is installed on your machine](https://docs.astral.sh/uv/getting-started/installation/)
 > ```
-> cd pa-proto
-> python3 -m http.server 8123
+> cd pa_proto
+> uv run python -m http.server 8123
 > ```
-> then open <http://localhost:8123> in your browser.
+> Then open <http://localhost:8123> in your browser.
 
 ## The screens (in order)
 
@@ -26,25 +31,3 @@ outside it.
 3. `3-contact-information.html` — **Contact Information** (pre-filled with fake data)
 4. `4-income-sources.html` — **Income Sources**
 5. `5-questions.html` — **Questions** ("A few more questions…")
-
-## How it behaves
-
-- Users click controls (Yes/No buttons, segmented options, dropdowns) and navigate
-  with **Next** / **Previous**.
-- **Next stays disabled until every required field (red asterisk) on the page is
-  answered**, then turns navy/blue.
-- Text fields are pre-filled with fake data (users aren't expected to type).
-- **Cancel** and **Save Draft** are intentionally non-functional.
-- There is no branching — every user sees the same screens regardless of input.
-- Answers are not persisted: reloading or going back then forward starts that page
-  fresh.
-
-## Files
-
-```
-index.html, 2-…, 3-…, 4-…, 5-…   the five screens
-css/styles.css                    shared myPATH styling
-js/app.js                         shared behavior (toggles, validation, navigation)
-spec/                             original spec + reference screenshots
-.claude/launch.json               local preview-server config (optional)
-```
