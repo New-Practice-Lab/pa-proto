@@ -135,7 +135,7 @@ body {
 /* links — myPATH style (blue, underlined) */
 a.link, .link {
   color: var(--link);
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
