@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+# Needed so the workflow can create/update a Release and upload assets.
+permissions:
+  contents: write
+
 jobs:
   package:
     runs-on: ubuntu-latest
@@ -17,9 +21,15 @@ jobs:
       - name: Create pa_proto.zip
         run: git archive --format=zip --prefix=pa_proto/ --output pa_proto.zip HEAD:pa_proto
 
-      - name: Upload zip as a downloadable artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: pa_proto
-          path: pa_proto.zip
-          if-no-files-found: error
+      # Publish the zip to a single, rolling "latest" release
+      - name: Publish zip to the "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view latest >/dev/null 2>&1; then
+            gh release upload latest pa_proto.zip --clobber
+          else
+            gh release create latest pa_proto.zip \
+              --title "PA Prototype (latest)" \
+              --notes "Download **pa_proto.zip** below, unzip it, and open \`pa_proto/index.html\`."
+          fi
