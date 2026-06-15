@@ -1,4 +1,4 @@
-# myPATH Usability-Test Prototype
+# myPATH Prototype for Usability Testing
 
 A small, static prototype that mimics 5 myPATH screens for moderated (Zoom)
 usability testing. No backend, build step, or internet is required.
