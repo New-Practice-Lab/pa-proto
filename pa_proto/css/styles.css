@@ -54,11 +54,11 @@ body {
   border-bottom: 3px solid var(--gold);
   padding-bottom: 14px;
 }
+/* fixed-width, equal steps so the status bar packs to the left (not stretched) */
 .step {
-  flex: 1;
+  flex: 0 0 160px;
   position: relative;
   text-align: center;
-  min-width: 0;
 }
 /* connector line to the previous step */
 .step::before {
