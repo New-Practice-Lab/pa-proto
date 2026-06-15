@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myPATH — Getting Started</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<!-- Screen 2: Getting Started. Required = deceased taxpayer + final return. -->
+<body data-prev="index.html" data-next="3-contact-information.html">
+
+  <header class="app-header">
+    <h1>PA Personal Income Tax Return</h1>
+  </header>
+
+  <nav class="stepper" aria-label="Progress">
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Introduction</span></div>
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Identity Verification</span></div>
+    <div class="step current"><span class="circle">&rsaquo;</span><span class="label">Getting Started</span></div>
+  </nav>
+
+  <main class="content">
+    <h2 class="screen-title">Let's get started! First, tell us a bit about yourself.</h2>
+
+    <div class="question">
+      <span class="field-label">What is your Pennsylvania residency status?</span>
+      <div class="option-group segmented" role="group">
+        <div class="option" role="button" aria-pressed="false">Resident</div>
+        <div class="option" role="button" aria-pressed="false">Part-Year Resident</div>
+        <div class="option" role="button" aria-pressed="false">Nonresident</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label">What is your filing status?</span>
+      <div class="option-group segmented" role="group">
+        <div class="option" role="button" aria-pressed="false">Single</div>
+        <div class="option" role="button" aria-pressed="false">Married Filing Separate</div>
+        <div class="option" role="button" aria-pressed="false">Married Filing Joint</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Are you filing for a deceased taxpayer?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Is this your <a class="link">final return</a>?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <button type="button" class="btn-text">Cancel</button>
+      <button type="button" class="btn-text">Save Draft</button>
+    </div>
+    <div class="footer-right">
+      <button type="button" class="btn-prev">&lsaquo; Previous</button>
+      <button type="button" class="btn-next">Next &rsaquo;</button>
+    </div>
+  </footer>
+  <div class="bottom-strip"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

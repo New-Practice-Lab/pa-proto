@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myPATH — A few more questions</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<!-- Screen 5: Questions. All Yes/No questions required, start unselected.
+     This is the last screen, so Next has no destination. -->
+<body data-prev="4-income-sources.html" data-next="">
+
+  <header class="app-header">
+    <h1>PA Personal Income Tax Return</h1>
+  </header>
+
+  <nav class="stepper" aria-label="Progress">
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Introduction</span></div>
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Identity Verification</span></div>
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Getting Started</span></div>
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Contact Information</span></div>
+    <div class="step done"><span class="circle">&checkmark;</span><span class="label">Income Sources</span></div>
+    <div class="step current boxed"><span class="circle">&rsaquo;</span><span class="label">Questions</span></div>
+  </nav>
+
+  <main class="content">
+    <h2 class="screen-title">A few more questions&hellip;</h2>
+
+    <div class="question">
+      <span class="field-label req">Do you have allowable unreimbursed business expenses?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Did you contribute to a <a class="link">Qualified Tuition Program</a>, <a class="link">ABLE Savings Account Program</a>, Health Savings Account, or Medical Savings Account?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Did you receive a Student Loan Interest Deduction?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Do you want to claim Tax Forgiveness?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Do you want to claim Child and Dependent Care Enhancement Tax Credit?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Did you claim federal Earned Income Tax Credit for tax year 2025?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Are you required to report any penalties and/or interest?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Do you have Use Tax liability that was not reported on Form PA-1?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <span class="field-label req">Do you have credit from your 2024 PA Personal Income Tax return?</span>
+      <div class="option-group yesno" role="group" data-required="true">
+        <div class="option" role="button" aria-pressed="false">Yes</div>
+        <div class="option" role="button" aria-pressed="false">No</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <button type="button" class="btn-text">Cancel</button>
+      <button type="button" class="btn-text">Save Draft</button>
+    </div>
+    <div class="footer-right">
+      <button type="button" class="btn-prev">&lsaquo; Previous</button>
+      <button type="button" class="btn-next">Next &rsaquo;</button>
+    </div>
+  </footer>
+  <div class="bottom-strip"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

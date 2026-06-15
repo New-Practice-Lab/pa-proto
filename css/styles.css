@@ -1,0 +1,325 @@
+/* ============================================================
+   myPATH prototype — shared styles
+   Palette approximated from myPATH screenshots.
+   ============================================================ */
+:root {
+  --navy: #1b3a6b;          /* primary navy: header, buttons, stepper */
+  --navy-dark: #15305a;
+  --gold: #d99b00;          /* gold/amber accent border */
+  --link: #1c5fa8;          /* link blue */
+  --text: #333333;
+  --text-muted: #6b6b6b;
+  --label: #5a5a5a;
+  --field-bg: #f2f2f2;
+  --border: #cccccc;
+  --border-light: #e3e3e3;
+  --selected-bg: #dce9f7;   /* light blue, selected Yes/No */
+  --required: #d12f2f;      /* red asterisk */
+  --footer-strip: #3f3f3f;
+  --page-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--page-bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- App header ---------- */
+.app-header {
+  padding: 16px 40px 8px;
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 3px solid var(--navy);
+  padding-bottom: 8px;
+}
+
+/* ---------- Stepper ---------- */
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  padding: 18px 40px 0;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 14px;
+}
+.step {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  min-width: 0;
+}
+/* connector line to the previous step */
+.step::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: -50%;
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  z-index: 0;
+}
+.step:first-child::before { display: none; }
+.step.done::before,
+.step.current::before { background: var(--navy); }
+
+.step .circle {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+.step.upcoming .circle { background: var(--border); }
+.step .label {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--navy);
+}
+.step.upcoming .label { color: var(--text-muted); }
+.step.current .label { font-weight: 700; }
+/* gold highlight box around the current step (as in screen 5) */
+.step.current.boxed {
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  padding: 4px 0 2px;
+}
+
+/* ---------- Content ---------- */
+.content {
+  flex: 1 0 auto;
+  padding: 22px 40px 36px;
+}
+/* On screen 1 (no stepper) give the content area a gold top rule */
+.content.intro {
+  border-top: 3px solid var(--gold);
+  margin-top: 8px;
+  padding-top: 22px;
+}
+.screen-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin: 0 0 22px;
+}
+
+/* intro text */
+.intro-text p { line-height: 1.5; margin: 0 0 14px; }
+.intro-text ul { margin: 0 0 16px; padding-left: 22px; line-height: 1.5; }
+.intro-text li { margin-bottom: 4px; }
+.intro-text strong { font-weight: 700; }
+
+/* links — myPATH style (blue, underlined) */
+a.link, .link {
+  color: var(--link);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Field labels & required marker ---------- */
+.field-label {
+  display: block;
+  font-size: 13px;
+  color: var(--label);
+  margin: 0 0 6px;
+}
+.req::after {
+  content: " *";
+  color: var(--required);
+  font-weight: 700;
+}
+
+/* ---------- Question blocks ---------- */
+.question { margin-bottom: 20px; max-width: 360px; }
+
+/* ---------- Option groups (Yes/No + segmented) ---------- */
+.option-group { display: flex; }
+
+/* segmented: stacked full-width buttons */
+.option-group.segmented { flex-direction: column; max-width: 320px; }
+.option-group.segmented .option {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  padding: 9px 12px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+}
+.option-group.segmented .option:last-child { border-bottom: 1px solid var(--border); }
+.option-group.segmented .option.selected {
+  border-left: 4px solid var(--navy);
+  font-weight: 600;
+}
+
+/* Yes/No: two buttons side by side */
+.option-group.yesno { gap: 0; max-width: 300px; }
+.option-group.yesno .option {
+  flex: 1;
+  background: var(--field-bg);
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+}
+.option-group.yesno .option + .option { border-left: none; }
+.option-group.yesno .option.selected {
+  background: var(--selected-bg);
+  border-color: var(--navy);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ---------- Cards (screen 3) ---------- */
+.card-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.card {
+  flex: 1;
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--gold);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 18px 20px 24px;
+}
+.card.full { flex-basis: 100%; }
+.card h3 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+/* text fields (pre-filled, read-style underline inputs) */
+.field { margin-bottom: 16px; }
+.text-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 4px 2px;
+  font-size: 15px;
+  color: var(--text);
+  font-family: inherit;
+}
+.text-input::placeholder { font-style: italic; color: #9a9a9a; }
+.text-input:focus { outline: none; border-bottom: 2px solid var(--gold); }
+
+select.dropdown {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 4px 2px;
+  font-size: 15px;
+  color: var(--text);
+  font-family: inherit;
+}
+select.dropdown:focus { outline: none; border-bottom: 2px solid var(--gold); }
+select.dropdown.placeholder { color: #9a9a9a; font-style: italic; }
+
+.verify-btn {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 4px 0 16px;
+}
+
+/* two-column question layout (screen 4) */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 48px;
+}
+@media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ---------- Footer ---------- */
+.footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  border-top: 1px solid var(--border-light);
+  background: #fff;
+}
+.footer-left { display: flex; gap: 28px; }
+.footer-right { display: flex; gap: 14px; align-items: center; }
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-prev {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-next {
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 22px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-next:disabled {
+  background: #b9c2d1;
+  border-color: #b9c2d1;
+  color: #eef1f5;
+  cursor: not-allowed;
+}
+.btn-prev[hidden] { display: none; }
+
+/* thin dark strip at very bottom (as in screenshots) */
+.bottom-strip {
+  flex-shrink: 0;
+  height: 10px;
+  background: var(--footer-strip);
+}
