@@ -1,8 +1,11 @@
 name: Package prototype
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - 'pa_proto/**'
 
 # Needed so the workflow can create/update a Release and upload assets.
 permissions:
